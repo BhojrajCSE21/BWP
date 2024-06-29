@@ -1,12 +1,12 @@
 const data = [
     {
-        title: "AAAAAAAAAA",
-        body: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        title: "Help for better education",
+        body: "Lorem Ipsum is simply dummy text of printing and typesetting industry Ips...",
         imgUrl: require("./assets/image-1.png"),
     },
     {
-        title: "BBBBBBBBBB",
-        body: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        title: "Help for better education",
+        body: "Lorem Ipsum is simply dummy text of printing and typesetting industry Ips.",
         imgUrl: require("./assets/image-1.png"),
     },
     {
