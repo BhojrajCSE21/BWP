@@ -25,7 +25,7 @@ const AadhaarScreen = ({ navigation, route }) => {
       dob,
       aadhaarImage
     });
-    navigation.navigate('Contact');
+    navigation.navigate('Login');
   };
 
   const selectImage = async () => {
