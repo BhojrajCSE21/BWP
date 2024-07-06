@@ -124,9 +124,6 @@ const styles = StyleSheet.create({
     height: undefined,
     aspectRatio: 1.8,
   },
-  containerT: {
-    borderBottomColor: "red",
-  },
   content: {
     padding: 15,
   },

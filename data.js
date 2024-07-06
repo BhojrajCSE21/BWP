@@ -11,7 +11,7 @@ const data = [
     },
     {
         title: "CCCCCCCCCC",
-        body: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        body: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         imgUrl: require("./assets/image-1.png"),
     },
 ];
