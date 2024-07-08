@@ -105,7 +105,7 @@ const RegisterScreen = ({ navigation }) => {
       </View>
       <TouchableOpacity style={styles.buttonContainer} onPress={handleNext}>
         <LinearGradient
-          colors={['#4c669f', '#3b5998', '#192f6a']}
+          colors={['#3432af', '#5f5dd6', '#3432af']}
           style={styles.button}
         >
           <Text style={styles.buttonText}>Next</Text>

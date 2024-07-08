@@ -24,7 +24,7 @@ const CertificateScreen = ({ navigation, route }) => {
       ...route.params,
       certificateNumber,
       certificateProvider,
-      certificateDate,
+      certificateDate: certificateDate.toISOString(), // Convert date to string
       certificateImage,
       certificateFileName,
     });
@@ -101,7 +101,7 @@ const CertificateScreen = ({ navigation, route }) => {
       )}
       <TouchableOpacity style={styles.buttonContainer} onPress={handleNext}>
         <LinearGradient
-          colors={['#4c669f', '#3b5998', '#192f6a']}
+          colors={['#3432af', '#5f5dd6', '#3432af']}
           style={styles.button}
         >
           <Text style={styles.buttonText}>Next</Text>

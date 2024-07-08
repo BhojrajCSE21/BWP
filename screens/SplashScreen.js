@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   logo: {
-    width: 300,
+    width: 500,
     height: 300,
   },
 });
