@@ -10,6 +10,8 @@ import AadhaarScreen from "../screens/AadhaarScreen";
 import Homepage from "../screens/Homepage";
 import AppBar from "../components/AppBar";
 import DetailCarousel from "../components/DetailCarousel";
+import Donation from "../screens/Donation";
+import ContactScreen from "../screens/ContactScreen";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -17,21 +19,21 @@ const Drawer = createDrawerNavigator();
 function HomeStack() {
   return (
     <Stack.Navigator initialRouteName="Splash">
-      {/* <Stack.Screen
+      <Stack.Screen
         name="Splash"
         component={SplashScreen}
         options={{ headerShown: false }}
-      /> */}
-      {/* <Stack.Screen name="Login" component={LoginScreen} />
+      />
+      <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Verify" component={VerificationScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="Certificate" component={CertificateScreen} />
-      <Stack.Screen name="Aadhaar" component={AadhaarScreen} /> */}
+      <Stack.Screen name="Aadhaar" component={AadhaarScreen} />
       <Stack.Screen
         name="Homepage"
         component={Homepage}
         options={{
-          header: () => <AppBar />, // Use custom header
+          header: () => <AppBar />, 
         }}
       />
     </Stack.Navigator>
@@ -50,10 +52,23 @@ function DrawerNavigator() {
         name="Agenda"
         component={DetailCarousel}
         options={{
-          header: () => <AppBar />, // Use custom header
+          header: () => <AppBar />, 
         }}
       />
-      {/* <Drawer.Screen name="Profile" component={ProfileScreen} /> */}
+      <Drawer.Screen
+        name="Donation"
+        component={Donation}
+        options={{
+          header: () => <AppBar />, 
+        }}
+      />
+      <Drawer.Screen
+        name="Contact Us"
+        component={ContactScreen}
+        options={{
+          header: () => <AppBar />, 
+        }}
+      />
     </Drawer.Navigator>
   );
 }
