@@ -17,7 +17,7 @@ import Animated, {
 
 const INTERVAL = 3000;
 
-export default function HomeMainCarousel() {
+export default function Card() {
   const [newData] = useState([
     { key: "spacer-left" },
     ...data,
@@ -116,24 +116,25 @@ const styles = StyleSheet.create({
   imageContainer: {
     borderRadius: 34,
     overflow: "hidden",
-    borderWidth: 0.4, 
-    borderColor: "#52505095", 
   },
   image: {
     width: "100%",
     height: undefined,
     aspectRatio: 1.8,
   },
+  containerT: {
+    borderBottomColor: "red",
+  },
   content: {
     padding: 15,
   },
   title: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 10,
   },
   body: {
     fontSize: 16,
-    color: "#444",
+    color: '#444',
   },
 });
