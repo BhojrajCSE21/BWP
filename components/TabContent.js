@@ -134,5 +134,6 @@ const styles = StyleSheet.create({
   body: {
     fontSize: 16,
     color: "#444",
+    textAlign: "justify"
   },
 });

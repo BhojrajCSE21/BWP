@@ -9,9 +9,11 @@ import CertificateScreen from "../screens/CertificateScreen";
 import AadhaarScreen from "../screens/AadhaarScreen";
 import Homepage from "../screens/Homepage";
 import AppBar from "../components/AppBar";
-import DetailCarousel from "../components/DetailCarousel";
 import Donation from "../screens/Donation";
 import ContactScreen from "../screens/ContactScreen";
+import Agenda from "../components/Agenda";
+import DetailView from "../components/DetailView";
+import UserProfile from "../components/UserProfile";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -36,6 +38,16 @@ function HomeStack() {
           header: () => <AppBar />, 
         }}
       />
+      <Stack.Screen
+        name="DetailView"
+        component={DetailView}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="UserProfile"
+        component={UserProfile}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 }
@@ -50,7 +62,7 @@ function DrawerNavigator() {
       />
       <Drawer.Screen
         name="Agenda"
-        component={DetailCarousel}
+        component={Agenda}
         options={{
           header: () => <AppBar />, 
         }}
