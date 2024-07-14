@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesome } from "@expo/vector-icons";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export default function AppBar({ showBackButton }) {
@@ -20,6 +20,8 @@ export default function AppBar({ showBackButton }) {
   };
 
   return (
+    <View>
+    <SafeAreaView style={styles.mainContainer}>
     <View style={styles.appBar}>
       <View style={styles.leftSection}>
         {showBackButton ? (
@@ -39,10 +41,15 @@ export default function AppBar({ showBackButton }) {
         <Image source={profileLogo} style={styles.profileLogo} />
       </TouchableOpacity>
     </View>
+    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: "#E3EBFF"
+  },
   appBar: {
     flexDirection: "row",
     alignItems: "center",
@@ -51,7 +58,6 @@ const styles = StyleSheet.create({
     paddingVertical: 24,
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
-    backgroundColor: "#E3EBFF",
     marginTop: 28,
     width: "100%",
   },
