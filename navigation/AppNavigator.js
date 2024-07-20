@@ -21,7 +21,7 @@ const Drawer = createDrawerNavigator();
 function HomeStack() {
   return (
     <Stack.Navigator initialRouteName="Splash">
-      <Stack.Screen
+      {/* <Stack.Screen
         name="Splash"
         component={SplashScreen}
         options={{ headerShown: false }}
@@ -30,7 +30,7 @@ function HomeStack() {
       <Stack.Screen name="Verify" component={VerificationScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="Certificate" component={CertificateScreen} />
-      <Stack.Screen name="Aadhaar" component={AadhaarScreen} />
+      <Stack.Screen name="Aadhaar" component={AadhaarScreen} /> */}
       <Stack.Screen
         name="Homepage"
         component={Homepage}
