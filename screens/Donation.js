@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   qrCode: {
-    width: 210,
-    height: 400,
+    width: 220,
+    height: 300,
     marginBottom: 40,
   },
   bankDetailsContainer: {

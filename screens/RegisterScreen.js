@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
+
 const RegisterScreen = ({ navigation }) => {
   const [referenceCode, setReferenceCode] = useState('');
   const [name, setName] = useState('');
@@ -121,6 +122,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
+    backgroundColor: '#e3ebff',
   },
   header: {
     fontSize: 24,

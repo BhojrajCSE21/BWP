@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import * as ImagePicker from 'expo-image-picker';
+//import Background from '../components/Background';
 
 const CertificateScreen = ({ navigation, route }) => {
   const [certificateNumber, setCertificateNumber] = useState('');
@@ -58,6 +59,7 @@ const CertificateScreen = ({ navigation, route }) => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      
       <Text style={styles.header}>Registration</Text>
       <View style={styles.uploadContainer}>
         <TextInput
@@ -117,6 +119,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
+    backgroundColor: '#e3ebff',
   },
   header: {
     fontSize: 24,

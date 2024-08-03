@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, Image, StyleSheet } from 'react-native';
+import Background from '../components/Background';
 
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
@@ -10,6 +11,7 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <Background />
       <Image source={require('../assets/NSSS-Logo.png')} style={styles.logo} />
     </View>
   );

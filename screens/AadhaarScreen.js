@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import * as ImagePicker from 'expo-image-picker';
+//import Background from '../components/Background';
 
 const AadhaarScreen = ({ navigation, route }) => {
   const [aadhaarNumber, setAadhaarNumber] = useState('');
@@ -57,6 +58,7 @@ const AadhaarScreen = ({ navigation, route }) => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      
       <Text style={styles.header}>Registration</Text>
       <View style={styles.uploadContainer}>
         <TextInput

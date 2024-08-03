@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { LinearGradient } from 'expo-linear-gradient';
+//import Background from '../components/Background'; 
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -39,38 +40,40 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Login</Text>
-      <TextInput
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        style={styles.input}
-      />
-      <View style={styles.passwordContainer}>
+      <View style={styles.overlay}>
+        <Text style={styles.header}>Login</Text>
         <TextInput
-          placeholder="Password"
-          value={password}
-          onChangeText={setPassword}
-          style={[styles.input, styles.passwordInput]}
-          secureTextEntry={hidePassword}
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
+          style={styles.input}
         />
-        <TouchableOpacity onPress={togglePasswordVisibility} style={styles.eyeIcon}>
-          <Icon name={hidePassword ? 'visibility-off' : 'visibility'} size={24} color="#777" />
+        <View style={styles.passwordContainer}>
+          <TextInput
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
+            style={[styles.input, styles.passwordInput]}
+            secureTextEntry={hidePassword}
+          />
+          <TouchableOpacity onPress={togglePasswordVisibility} style={styles.eyeIcon}>
+            <Icon name={hidePassword ? 'visibility-off' : 'visibility'} size={24} color="#777" />
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity style={styles.buttonContainer} onPress={handleLogin}>
+          <LinearGradient
+            colors={['#3432af', '#5f5dd6', '#3432af']}
+            style={styles.button}
+          >
+            <Text style={styles.buttonText}>Login</Text>
+          </LinearGradient>
         </TouchableOpacity>
-      </View>
-      <TouchableOpacity style={styles.buttonContainer} onPress={handleLogin}>
-        <LinearGradient
-          colors={['#3432af', '#5f5dd6', '#3432af']}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Login</Text>
-        </LinearGradient>
-      </TouchableOpacity>
-      <View style={styles.centeredRow}>
-        <Text style={styles.notMemberText}>Not a member?</Text>
-        <TouchableOpacity onPress={handleRegister}>
-          <Text style={styles.registerLink}>Register</Text>
-        </TouchableOpacity>
+        <View style={styles.centeredRow}>
+          <Text style={styles.notMemberText}>Not a member?</Text>
+          <TouchableOpacity onPress={handleRegister}>
+            <Text style={styles.registerLink}>Register</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -79,6 +82,16 @@ const LoginScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
