@@ -1,17 +1,17 @@
 const data = [
     {
         title: "Help for better education",
-        body: "Lorem Ipsum is simply dummy text of printing and typesetting industry Ips...",
+        body: "Lorem Ipsum is simply dummy text of printing and typesetting industry Ips.",
+        imgUrl: require("./assets/image-1.png"),
+    },
+    {
+        title: "Help for better education",
+        body: "Lorem Ipsum is simply dummy text of printing and typesetting industry Ipss.",
         imgUrl: require("./assets/image-1.png"),
     },
     {
         title: "Help for better education",
         body: "Lorem Ipsum is simply dummy text of printing and typesetting industry Ips.",
-        imgUrl: require("./assets/image-1.png"),
-    },
-    {
-        title: "CCCCCCCCCC",
-        body: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         imgUrl: require("./assets/image-1.png"),
     },
 ];

@@ -1,34 +1,20 @@
-import {
-  StyleSheet,
-  View,
-  Image,
-  useWindowDimensions,
-  Text,
-} from "react-native";
-import data from "../data";
-import { useEffect, useRef, useState } from "react";
-import Animated, {
-  useAnimatedScrollHandler,
-  useAnimatedStyle,
-  useSharedValue,
-  interpolate,
-  withTiming,
-} from "react-native-reanimated";
+import React, { useEffect, useRef, useState } from 'react';
+import { StyleSheet, View, Image, useWindowDimensions, Text, TouchableOpacity } from 'react-native';
+import data from '../data';
+import Animated, { useAnimatedScrollHandler, useAnimatedStyle, useSharedValue, interpolate, withTiming } from 'react-native-reanimated';
+import { useNavigation } from '@react-navigation/native';
 
 const INTERVAL = 3000;
 
 export default function HomeMainCarousel() {
-  const [newData] = useState([
-    { key: "spacer-left" },
-    ...data,
-    { key: "spacer-right" },
-  ]);
+  const [newData] = useState([{ key: 'spacer-left' }, ...data, { key: 'spacer-right' }]);
   const { width } = useWindowDimensions();
   const SIZE = width * 0.9;
   const SPACER = (width - SIZE) / 2;
   const x = useSharedValue(0);
   const scrollViewRef = useRef(null);
   const numItems = data.length;
+  const navigation = useNavigation();
 
   useEffect(() => {
     const scrollInterval = setInterval(() => {
@@ -55,6 +41,11 @@ export default function HomeMainCarousel() {
       x.value = event.contentOffset.x;
     },
   });
+
+  const handleSeeMore = (item) => {
+    navigation.navigate('DetailView', item);
+  };
+
   return (
     <>
       <View>
@@ -91,7 +82,10 @@ export default function HomeMainCarousel() {
                   <Image source={item.imgUrl} style={styles.image} />
                   <View style={styles.content}>
                     <Text style={styles.title}>{item.title}</Text>
-                    <Text style={styles.body}>{item.body}</Text>
+                    <Text numberOfLines={2} style={styles.body}>{item.body}</Text>
+                    <TouchableOpacity onPress={() => handleSeeMore(item)}>
+                      <Text style={styles.seeMore}>See more</Text>
+                    </TouchableOpacity>
                   </View>
                 </Animated.View>
               </Animated.View>
@@ -105,22 +99,22 @@ export default function HomeMainCarousel() {
 
 const styles = StyleSheet.create({
   agendaHeadingContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   agendaText: {
-    color: "#303030",
-    fontWeight: "bold",
+    color: '#303030',
+    fontWeight: 'bold',
     fontSize: 20,
     margin: 24,
   },
   imageContainer: {
     borderRadius: 34,
-    overflow: "hidden",
-    borderWidth: 0.4, 
-    borderColor: "#52505095", 
+    overflow: 'hidden',
+    borderWidth: 0.4,
+    borderColor: '#52505095',
   },
   image: {
-    width: "100%",
+    width: '100%',
     height: undefined,
     aspectRatio: 1.8,
   },
@@ -129,11 +123,16 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 10,
   },
   body: {
     fontSize: 16,
-    color: "#444",
+    color: '#444',
+  },
+  seeMore: {
+    fontSize: 16,
+    color: 'blue',
+    marginTop: 5,
   },
 });
